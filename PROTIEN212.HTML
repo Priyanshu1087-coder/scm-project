@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Review Carousel</title>
+ <div style="background-image: D:\gym\images('home-bg-3.jpg');"> 
+	<style>
+		.review {
+			background: rgb(145, 226, 188);
+			height: auto;
+			width: 270px;
+			border-radius: 15px;
+			margin: auto;
+			padding: 10px;
+			margin-top: 30px;
+			box-shadow: 5px 5px 5px #32917d;
+			align-items: center;
+		}
+		
+		.review__items {
+			align-items: center;
+			justify-content: space-evenly;
+			width: 250px;
+			padding: 10px;
+			align-items: center;
+		}
+		
+		.review__items img {
+			height: 250px;
+			width: 250px;
+			border-radius: 5px;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 4px 15px;
+		}
+		
+		.review__items h1 {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 20px;
+		}
+		
+		.review__items p {
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
+			font-size: 14px;
+		}
+		
+		.review__button {
+			text-align: center;
+			padding: 10px;
+		}
+		
+		.review__button button {
+			color: rgb(192, 229, 192);
+			background: green;
+			font-weight: bold;
+		}
+		
+		.review__items {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="review">
+		<div class="review__items">
+			<img src=
+"D:\gym\OIP.JIq1un8Oru7xAM5Iq1eTuwHaJQ.jpg" />
+			<h1>Optium Nutrition</h1>
+			<p>
+			Rs- 1800
+			</p>
+
+		</div>
+
+		<div class="review__items">
+			<img src=
+"D:\gym\OIP.2IRJUx_EV68wLrzKFnCxygHaHa.jpg" />
+			<h1>Mass gainer</h1>
+			<p>
+				RS - 2210
+			</p>
+
+		</div>	
+		<div class="review">
+		<div class="review__items">
+			<img src=
+""D:\gym\NB-MBZ-1035-01-01.jpg"" />
+			<h1>MuscleBlaze Whey</h1>
+			<p>
+			 Rs- 2400
+			</p>
+
+		</div>
+
+		<div class="review__items">
+			<img src=
+"D:\gym\NB-OSC-1006-01-01-768x768.jpg" />
+			<h1>One Science Nutrition (OSN) Nitra Whey</h1>
+			<p> Unique Combination: This contains Whey protein isolate and Concentrate which works straight on building lean muscles.
+    Lean Growth: Support muscle growth & maintenance.
+    Boost Metabolism: Speeds up fat metabolism and easy digestion
+    Pre-Post workout: Fuel your body with the DAA, Tribulus Terrestris, maca powder, and boron & creatine monohydrate.
+				
+			</p>
+		</div>
+
+		<div class="review__button">
+			<button id="prev" onclick="previousReview()">
+				PREV
+			</button>
+			
+			<button id="next" onclick="nextReview()">
+				NEXT
+			</button>
+		</div>
+	</div>
+
+	<script>
+		let rev = 0;
+		carousel(rev);
+
+		function previousReview() {
+			rev = rev - 1;
+			carousel(rev);
+		}
+
+		function nextReview() {
+			rev = rev + 1;
+			carousel(rev);
+		}
+
+		function carousel(review) {
+			let reviews = document
+				.getElementsByClassName("review__items");
+
+			if (review >= reviews.length) {
+				review = 0;
+				rev = 0;
+			}
+			if (review < 0) {
+				review = reviews.length - 1;
+				rev = reviews.length - 1;
+			}
+			for (let i = 0; i < reviews.length; i++) {
+				reviews[i].style.display = "none";
+			}
+			reviews[review].style.display = "block";
+		}
+	</script>
+</body>
+
+</html>

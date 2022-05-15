@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Price</title>
+
+</head>
+
+
+<body background= "D:\gym\background.jpg"> 
+
+<div> <h1>Cardio</h1></div>
+	 
+	<div class="columns">
+	  <ul class="price">
+    <li class="grey">Rs 800 / Month</li>
+    <li>Running</li>
+    <li>Core exercises</li>
+    <a href="#" class="button">Sign Up</a>
+  </ul>
+</div> 
+<div> <h1>Weight Lifting</h1></div>
+	 
+	<div class="columns">
+	  <ul class="price">
+    <li class="grey">Rs 1200 / Month</li>
+    <li>Full body workout</li>
+    <li>Core exercises</li>
+    <a href="#" class="button">Sign Up</a>
+  </ul>
+</div> 
+<div> <h1>Diet Plans</h1></div>
+<script>let rev = 0;
+        carousel(rev);
+  
+        function previousReview() {
+            rev = rev - 1;
+            carousel(rev);
+        }
+  
+        function nextReview() {
+            rev = rev + 1;
+            carousel(rev);
+        }
+  
+        function carousel(review) {
+            let reviews = document
+                .getElementsByClassName("review__items");
+  
+            if (review >= reviews.length) {
+                review = 0;
+                rev = 0;
+            }
+            if (review < 0) {
+                review = reviews.length - 1;
+                rev = reviews.length - 1;
+            }
+            for (let i = 0; i < reviews.length; i++) {
+                reviews[i].style.display = "none";
+				}
+            reviews[review].style.display = "block";
+        }</script>
+				
+	 
+	<div class="columns">
+	  <ul class="price">
+    <li class="grey">Rs 800 / Month</li>
+    <li>Weight Losing diet</li>
+    <li>Weight Ganing diet </li>
+    <a href="#" class="button">Sign Up</a>
+  </ul>
+</div> 
+<div> <h1>Overall Result</h1></div>
+<div class="columns">
+	  <ul class="price">
+    <li class="grey">Rs 2400/ Month</li>
+    <li>Complete Cardio, Weight Lifting , Core traning</li>
+    <li>Diet</li>
+    <a href="#" class="button">Sign Up</a>
+  </ul>
+</div> 
+
+
+</html>
